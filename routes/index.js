@@ -47,6 +47,12 @@ function createResultObject(transaction) {
   return result;
 }
 
+router.get("/client_token", function (req, res) {
+  gateway.clientToken.generate({}, function (err, response) {
+    res.send(response.clientToken);
+  });
+});
+
 router.get('/', function (req, res) {
   res.redirect('/checkouts/new');
 });
