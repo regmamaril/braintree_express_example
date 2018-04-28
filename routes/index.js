@@ -79,6 +79,7 @@ router.post('/checkouts', function (req, res) {
   var nonce = req.body.payment_method_nonce;
 
   gateway.transaction.sale({
+    merchantAccountId: "PHP",
     amount: amount,
     paymentMethodNonce: nonce,
     options: {
